@@ -2,20 +2,11 @@ package main
 
 import (
 	"fmt"
-	"log"
-	"net/http"
+
+	"github.com/luiscadari/personalities-api-rest/routes"
 )
-
-func Home(w http.ResponseWriter, r *http.Request){
-	fmt.Fprint(w, "Home Page")
-}
-
-func handleRequest(){
-	http.HandleFunc("/", Home)
-	log.Fatal(http.ListenAndServe(":8000", nil))
-}
 
 func main(){
 	fmt.Println("Hello World")
-	handleRequest()
+	routes.HandleRequest()
 }
