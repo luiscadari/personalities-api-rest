@@ -27,3 +27,10 @@ func GetPersonality(w http.ResponseWriter, r *http.Request){
 	database.DB.First(&p, id)
 	json.NewEncoder(w).Encode(p)
 }
+
+func PostPersonality(w http.ResponseWriter, r *http.Request){
+	var newPersonality models.Personality
+	json.NewDecoder(r.Body).Decode(&newPersonality)
+	database.DB.Create(&newPersonality)
+	json.NewEncoder(w).Encode(newPersonality)
+}

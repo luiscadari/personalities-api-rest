@@ -13,6 +13,7 @@ func HandleRequest(){
 	gorilla.HandleFunc("/", controller.Home)
 	gorilla.HandleFunc("/personalities", controller.GetAllPersonalities).Methods("Get")
 	gorilla.HandleFunc("/personalities/{id}", controller.GetPersonality).Methods("Get")
+	gorilla.HandleFunc("/personalities", controller.PostPersonality).Methods("Post")
 	log.Fatal(http.ListenAndServe(":8000", gorilla))
 }
 
