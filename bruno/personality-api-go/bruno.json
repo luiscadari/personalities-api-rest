@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "personality-api-go",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

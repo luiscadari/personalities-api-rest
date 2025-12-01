@@ -1,0 +1,23 @@
+meta {
+  name: create-personality
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8000/personality
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "name": "personalidade teste de insercao",
+    "history": "historia da personalidade de teste"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
