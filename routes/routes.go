@@ -6,10 +6,12 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/luiscadari/personalities-api-rest/controller"
+	"github.com/luiscadari/personalities-api-rest/middleware"
 )
 
 func HandleRequest(){
 	gorilla := mux.NewRouter()
+	gorilla.Use(ContentTypeMiddleware)
 	gorilla.HandleFunc("/", controller.Home)
 	gorilla.HandleFunc("/personalities", controller.GetAllPersonalities).Methods("Get")
 	gorilla.HandleFunc("/personalities/{id}", controller.GetPersonality).Methods("Get")
